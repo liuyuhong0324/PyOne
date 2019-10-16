@@ -108,7 +108,7 @@ od_users={
 }
 
 
-
+show_epub="epub"
 show_doc="csv,doc,docx,odp,ods,odt,pot,potm,potx,pps,ppsx,ppsxm,ppt,pptm,pptx,rtf,xls,xlsx"
 show_image="bmp,jpg,jpeg,png,gif"
 show_video="mp4,webm"

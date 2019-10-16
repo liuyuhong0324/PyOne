@@ -156,6 +156,11 @@ def show(fileid,user,action='download',token=None):
         if ext in GetConfig('show_redirect').split(','):
             downloadUrl,play_url=GetDownloadUrl(fileid,user)
             resp=MakeResponse(redirect(downloadUrl))
+        elif ext in GetConfig('show_epub').split(','):
+            if action=='share':
+                resp=MakeResponse(render_template('theme/{}/show/epub.html'.format(GetConfig('theme')),url=url,path=path,cur_user=user,name=name))
+            else:
+                resp=MakeResponse(render_template('show/epub.html'.format(GetConfig('theme')),url=url,path=path,cur_user=user,name=name))
         elif ext=='pdf':
             if action=='share':
                 resp=MakeResponse(render_template('theme/{}/show/pdf.html'.format(GetConfig('theme')),url=url,path=path,cur_user=user,name=name))
